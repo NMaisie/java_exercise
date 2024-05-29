@@ -22,6 +22,6 @@ public class Book extends Item implements ItemType{
 
     @Override
     public void displayDetails() {
-        System.out.println("Title: "+ getTitle()+"\nItem type: "+ getItemType()+"\nAuthor: "+ author);
+        System.out.println("Book title: "+ getTitle()+"\nItem type: "+ getItemType()+"\nAvailable "+ isAvailable()+"\nAuthor: "+ author);
     }
 }

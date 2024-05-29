@@ -23,6 +23,6 @@ public class DVD extends Item implements ItemType {
 
     @Override
     public void displayDetails() {
-        System.out.println("Title: " + getTitle() + "\nItem type: " + getItemType() + "\nDVD director  " + director);
+        System.out.println("Title: " + getTitle() + "\nItem type: " + getItemType()+"\nAvailable "+ isAvailable() + "\nDVD director  " + director);
     }
 }

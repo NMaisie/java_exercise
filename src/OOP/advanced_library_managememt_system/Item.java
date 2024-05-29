@@ -5,10 +5,10 @@ public abstract class Item {
     private String itemId;
     private boolean isAvailable;
 
-    public Item(String title, String itemId, boolean isAvailable){
-        this.title=title;
-        this.itemId=itemId;
-        this.isAvailable=isAvailable;
+    public Item(String title, String itemId, boolean isAvailable) {
+        this.title = title;
+        this.itemId = itemId;
+        this.isAvailable = isAvailable;
     }
 
     public String getTitle() {
@@ -35,16 +35,22 @@ public abstract class Item {
         isAvailable = available;
     }
 
-    /** Abtract methods */
+    /**
+     * Abtract methods
+     */
     public abstract String getItemType();
+
     public abstract void displayDetails();
 
-    /** Concrete methods */
-    public void borrowItem(){
+    /**
+     * Concrete methods
+     */
+    public void borrowItem() {
         this.isAvailable = false;
     }
-    public void returnItem(){
-        this.isAvailable =  true;
+
+    public void returnItem() {
+        this.isAvailable = true;
     }
 
 }

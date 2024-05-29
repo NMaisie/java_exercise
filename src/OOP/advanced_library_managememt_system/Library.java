@@ -6,6 +6,10 @@ import java.util.List;
 public class Library {
     private List<Item> items;
     public List<Member> members;
+    public Library() {
+        this.items = new ArrayList<>();
+        this.members = new ArrayList<>();
+    }
 
     public Library(List<Item> items, List<Member> members) {
         this.items = items;
@@ -23,14 +27,14 @@ public class Library {
     public void lendItem(String itemId,String memberId){
         Item requestedItem = this.findItemById(itemId);
         Member requestedMember = this.findMemberById(memberId);
-        if(requestedItem.isAvailable()){
+        if(requestedItem != null && requestedMember !=null &&requestedItem.isAvailable()){
             requestedMember.borrowItem(requestedItem);
         }
     }
     public void receiveItem(String itemId, String memberId){
         Item returnedItem = this.findItemById(itemId);
         Member returner = this.findMemberById(memberId);
-        if(!returnedItem.isAvailable() && returner.getBorrowedItems().contains(returnedItem)){
+        if(returnedItem != null && returner != null && !returnedItem.isAvailable() && returner.getBorrowedItems().contains(returnedItem)){
             returner.returnItem(returnedItem);
         }
     }
@@ -50,7 +54,7 @@ public class Library {
         }
         return null;
     }
-    public List<Item> listAvailableItems(String memberId){
+    public List<Item> listAvailableItems(){
         List<Item> availableItems = new ArrayList<>();
         for (Item item : items) {
             if (item.isAvailable()) {

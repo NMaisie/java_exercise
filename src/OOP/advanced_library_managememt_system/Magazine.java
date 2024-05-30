@@ -22,6 +22,11 @@ public class Magazine extends Item implements ItemType{
 
     @Override
     public void displayDetails() {
-        System.out.println("Magazine title: "+ getTitle()+"\nItem type: "+ getItemType()+"\nAvaialable: "+ isAvailable()+"\nMagazine issue number "+ issueNumber);
+        System.out.println(this);
+    }
+
+    @Override
+    public String toString() {
+        return "\nMagazine title: "+ getTitle()+"\nItem type: "+ getItemType()+"\nAvaialable: "+ isAvailable()+"\nMagazine issue number: "+ issueNumber;
     }
 }
